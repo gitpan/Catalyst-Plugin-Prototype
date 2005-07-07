@@ -10,7 +10,7 @@ Catalyst::Helper::Prototype - Helper to generate Prototype library
 
 =head1 SYNOPSIS
 
-    script/create.pl Prototype
+    script/myapp_create.pl Prototype
 
 =head1 DESCRIPTION
 
@@ -30,8 +30,17 @@ Make the Prototype library.
 
 sub mk_stuff {
     my ( $self, $helper ) = @_;
-    my $file = File::Spec->catfile( $helper->{base}, 'root', 'prototype.js' );
-    $helper->mk_file( $file, $HTML::Prototype::prototype );
+    my $prototype =
+      File::Spec->catfile( $helper->{base}, 'root', 'prototype.js' );
+    $helper->mk_file( $prototype, $HTML::Prototype::prototype );
+    my $controls =
+      File::Spec->catfile( $helper->{base}, 'root', 'controls.js' );
+    $helper->mk_file( $controls, $HTML::Prototype::prototype );
+    my $dragdrop =
+      File::Spec->catfile( $helper->{base}, 'root', 'dragdrop.js' );
+    $helper->mk_file( $dragdrop, $HTML::Prototype::prototype );
+    my $effects = File::Spec->catfile( $helper->{base}, 'root', 'effects.js' );
+    $helper->mk_file( $effects, $HTML::Prototype::prototype );
 }
 
 =head1 SEE ALSO

@@ -4,10 +4,16 @@ use strict;
 use base 'Class::Data::Inheritable';
 use HTML::Prototype;
 
-our $VERSION = '0.01';
+our $VERSION = '1.31';
 
 __PACKAGE__->mk_classdata('prototype');
-__PACKAGE__->prototype( HTML::Prototype->new );
+eval { require HTML::Prototype::Useful; };
+
+if ( $@ ) {
+    __PACKAGE__->prototype( HTML::Prototype->new );
+} else {
+    __PACKAGE__->prototype( HTML::Prototype::Useful->new );
+}
 
 =head1 NAME
 
