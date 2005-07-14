@@ -4,7 +4,7 @@ use strict;
 use base 'Class::Data::Inheritable';
 use HTML::Prototype;
 
-our $VERSION = '1.31';
+our $VERSION = '1.32';
 
 __PACKAGE__->mk_classdata('prototype');
 eval { require HTML::Prototype::Useful; };

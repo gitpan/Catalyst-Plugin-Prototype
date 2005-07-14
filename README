@@ -6,7 +6,7 @@ SYNOPSIS
         use Catalyst qw/Prototype/;
 
         # ...add this to your tt2 template...
-        [% c.prototype.define_javascript_functions %]
+        [% c.prototype.library %]
 
         # ...and use the helper methods...
         <div id="view"></div>
