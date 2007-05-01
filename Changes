@@ -1,5 +1,8 @@
 Revision history for Perl extension Catalyst::Plugin::Prototype
 
+1.33  2007-04-29 02:29:00
+        - Switched to Module::Install
+
 1.32  Mon Jul 12 21:00:00 2005
         - Fixed helper
 

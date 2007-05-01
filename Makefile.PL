@@ -1,11 +1,12 @@
-use ExtUtils::MakeMaker;
+use strict;
+use warnings;
+use inc::Module::Install 0.65;
 
-WriteMakefile(
-    'NAME'         => 'Catalyst::Plugin::Prototype',
-    'VERSION_FROM' => 'lib/Catalyst/Plugin/Prototype.pm',
-    'PREREQ_PM'    => {
-        Class::Data::Inheritable => 0,
-        Catalyst                 => 0,
-        HTML::Prototype          => '1.30'
-    }
-);
+name 'Catalyst-Plugin-Prototype';
+all_from 'lib/Catalyst/Plugin/Prototype.pm';
+
+requires 'Catalyst::Runtime' => '5.7006';
+requires 'HTML::Prototype'   => '1.48';
+
+auto_install;
+WriteAll;

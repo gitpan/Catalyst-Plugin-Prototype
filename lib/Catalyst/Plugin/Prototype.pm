@@ -4,7 +4,7 @@ use strict;
 use base 'Class::Data::Inheritable';
 use HTML::Prototype;
 
-our $VERSION = '1.32';
+our $VERSION = '1.33';
 
 __PACKAGE__->mk_classdata('prototype');
 eval { require HTML::Prototype::Useful; };
@@ -24,8 +24,25 @@ Catalyst::Plugin::Prototype - Plugin for Prototype
     # use it
     use Catalyst qw/Prototype/;
 
+=head2 INLINE USE
+
     # ...add this to your tt2 template...
     [% c.prototype.define_javascript_functions %]
+
+=head2 REFERENCE USE
+
+If you don't want to include the entire prototype library inline
+on every hit, you can use "script/myapp_create.pl Prototype"
+to generate static JavaScript files which then can be included
+via remote "script" tags.
+
+    # ...add this to your template...
+    <script LANGUAGE="JavaScript1.2" type="text/javascript"
+         src="/prototype.js"></script>
+    <script LANGUAGE="JavaScript1.2" type="text/javascript"
+         src="/effects.js"></script>
+    <!-- .... -->
+
 
     # ...and use the helper methods...
     <div id="view"></div>
